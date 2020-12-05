@@ -6,3 +6,5 @@ Pillow==6.1.0
 tensorflow==2.0.1
 Werkzeug==0.16.0
 gunicorn==19.7.1
+Keras==2.4.3
+opencv-python==4.4.0.46
