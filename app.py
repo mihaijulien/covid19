@@ -11,7 +11,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
-from keras.utils.data_utils import get_file
+from google_drive_downloader import GoogleDriveDownloader as gdd
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
@@ -35,7 +35,9 @@ app = Flask(__name__)
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'https://drive.google.com/file/d/1UoWRIfzLw60PZLjGhGmdKsNLegIyVL5g/view?usp=sharing'
+
+MODEL_PATH = gdd.download_file_from_google_drive(file_id='1UoWRIfzLw60PZLjGhGmdKsNLegIyVL5g',
+                                    dest_path='./covid19_detection.h5')
 
 # Load your own trained model
 model = load_model(MODEL_PATH)
