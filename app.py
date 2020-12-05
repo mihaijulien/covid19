@@ -11,6 +11,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 from tensorflow.keras.applications.imagenet_utils import preprocess_input, decode_predictions
+from keras.utils.data_utils import get_file
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
@@ -34,7 +35,7 @@ app = Flask(__name__)
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'covid_detection.h5'
+MODEL_PATH = 'https://drive.google.com/file/d/1UoWRIfzLw60PZLjGhGmdKsNLegIyVL5g/view?usp=sharing'
 
 # Load your own trained model
 model = load_model(MODEL_PATH)
